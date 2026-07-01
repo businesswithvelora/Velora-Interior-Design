@@ -1,0 +1,6 @@
+/* FILE: src/App.css */
+/* Minimal style deferral. All core styling resides inside the src/styles/ directory. */
+.main-content-panel {
+  width: 100%;
+  box-sizing: border-box;
+}

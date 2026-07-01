@@ -1,0 +1,64 @@
+/* FILE: src/index.css */
+@import './styles/variables.css';
+@import './styles/global.css';
+@import './styles/animations.css';
+
+/* Component Stylesheets */
+@import './styles/components/navbar.css';
+@import './styles/components/footer.css';
+@import './styles/components/hero.css';
+@import './styles/components/portfolio.css';
+@import './styles/components/slider.css';
+@import './styles/components/contact.css';
+
+/* Button utilities referenced in Button.jsx */
+.velora-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: var(--transition);
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  border: 1.5px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-gold);
+  color: #1A1A1A;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-bronze);
+  color: var(--color-white);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-gold);
+  color: #1A1A1A;
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 11px;
+}
+
+.btn-md {
+  padding: 14px 32px;
+  font-size: 13px;
+}
+
+.btn-lg {
+  padding: 18px 40px;
+  font-size: 14px;
+}

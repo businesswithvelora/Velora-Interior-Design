@@ -1,0 +1,14 @@
+/* FILE: src/styles/variables.css */
+:root {
+  --color-bg: #1A1A1A;
+  --color-slate: #252525;
+  --color-gold: #C9A96E;
+  --color-bronze: #A07840;
+  --color-ivory: #F5F0E8;
+  --color-white: #FFFFFF;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Cormorant Garamond', serif;
+  --transition: 0.3s ease;
+  --max-width: 1200px;
+}

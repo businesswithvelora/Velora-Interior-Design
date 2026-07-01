@@ -1,0 +1,121 @@
+/* FILE: src/styles/components/hero.css */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 26, 26, 0.65);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.15;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 40px;
+  }
+}
+
+.hero-description {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--color-ivory);
+  opacity: 0.9;
+  max-width: 650px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .hero-description {
+    font-size: 16px;
+  }
+}
+
+.hero-btn-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .hero-btn-group {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    gap: 12px;
+  }
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  cursor: pointer;
+  animation: bounceArrow 2s infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.hero-scroll-indicator:hover {
+  opacity: 1;
+  color: var(--color-gold);
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: var(--color-gold);
+}
+
+.hero-scroll-icon {
+  font-size: 14px;
+  color: var(--color-gold);
+}
