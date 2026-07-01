@@ -13,8 +13,10 @@ import retailImg from '/src/assets/images/services/luxury_retail_result.webp';
 import kitchenImg from '/src/assets/images/services/moder_kitchen_result.webp';
 import furnitureImg from '/src/assets/images/services/custom_fur_light_result.webp';
 import fitoutImg from '/src/assets/images/services/fit_out_detail_result.webp';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const ServicesPage = () => {
+  useScrollAnimation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('');
   const [formData, setFormData] = useState({

@@ -7,10 +7,12 @@ import { teamMembers } from '../data/teamMembers';
 import soloman from "../assets/about/soloman.webp";
 import heroBg from "/src/assets/images/about/hero_result.webp";
 import mirrorImg from "/src/assets/images/about/mirror_result.webp";
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 
 
 export const AboutPage = () => {
+  useScrollAnimation();
   const heroStyle = {
     backgroundImage: `url('${heroBg}')`,
     backgroundSize: 'cover',

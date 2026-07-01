@@ -1,21 +1,24 @@
-/* FILE: src/components/common/Loader.jsx */
 import React, { useContext, useEffect, useState } from 'react';
 import { LoaderContext } from '../../context/LoaderContext';
 
-export const Loader = () => {
+const Loader = () => {
   const { isLoading } = useContext(LoaderContext);
-  const [visible, setVisible] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+  const [render, setRender] = useState(true);
 
   useEffect(() => {
     if (!isLoading) {
+      setFadeOut(true);
+
       const timer = setTimeout(() => {
-        setVisible(false);
-      }, 400); // Match CSS fade-out transition duration
+        setRender(false);
+      }, 900);
+
       return () => clearTimeout(timer);
     }
   }, [isLoading]);
 
-  if (!visible) return null;
+  if (!render) return null;
 
   const overlayStyle = {
     position: 'fixed',
@@ -28,50 +31,38 @@ export const Loader = () => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    transition: 'opacity 0.3s ease, visibility 0.3s ease',
-    opacity: isLoading ? 1 : 0,
-    visibility: isLoading ? 'visible' : 'hidden'
-  };
-
-  const contentStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center'
-  };
-
-  const vStyle = {
-    fontFamily: 'var(--font-display)',
-    fontSize: '80px',
-    color: 'var(--color-gold)',
-    lineHeight: '1',
-    marginBottom: '10px',
-    animation: 'scaleUp 1s ease forwards'
-  };
-
-  const brandStyle = {
-    fontFamily: 'var(--font-display)',
-    fontSize: '24px',
-    color: 'var(--color-white)',
-    textTransform: 'uppercase',
-    letterSpacing: '0.15em',
-    marginBottom: '4px'
-  };
-
-  const tagStyle = {
-    fontFamily: 'var(--font-body)',
-    fontSize: '10px',
-    color: 'var(--color-gold)',
-    textTransform: 'uppercase',
-    letterSpacing: '0.3em'
+    // transition: 'opacity 0.9s ease, transform 0.9s ease',
+    transition: 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1)',
+    opacity: fadeOut ? 0 : 1,
+    transform: fadeOut ? 'scale(1.05)' : 'scale(1)',
+     pointerEvents: fadeOut ? 'none' : 'auto',
   };
 
   return (
-    <div className="loader-overlay" style={overlayStyle}>
-      <div style={contentStyle}>
-        <span style={vStyle}>V</span>
-        <h2 style={brandStyle}>Velora</h2>
-        <span style={tagStyle}>Interior Design</span>
+    <div style={overlayStyle}>
+      <div style={{ textAlign: 'center' }}>
+        <span style={{
+          fontSize: '80px',
+          color: 'var(--color-gold)',
+          display: 'block'
+        }}>
+          V
+        </span>
+
+        <h2 style={{
+          color: '#fff',
+          letterSpacing: '0.15em'
+        }}>
+          Velora
+        </h2>
+
+        <span style={{
+          color: 'var(--color-gold)',
+          fontSize: '10px',
+          letterSpacing: '0.3em'
+        }}>
+          Interior Design
+        </span>
       </div>
     </div>
   );

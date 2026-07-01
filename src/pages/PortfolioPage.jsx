@@ -4,8 +4,10 @@ import { SectionLabel } from '../components/ui/SectionLabel';
 import { ProjectCard } from '../components/ui/ProjectCard';
 import { projects } from '../data/projects';
 import boutiquehotel from '../assets/images/portfolio/boutiquehotel.webp';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const PortfolioPage = () => {
+  useScrollAnimation();
   const heroStyle = {
     backgroundImage: `linear-gradient(rgba(15, 15, 15, 0.75), rgba(15, 15, 15, 0.75)), url(${boutiquehotel})`,
     backgroundSize: 'cover',

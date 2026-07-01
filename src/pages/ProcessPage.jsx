@@ -11,8 +11,9 @@ import process5 from '../assets/process/5_process.webp';
 import process6 from '../assets/process/6_process.webp';
 import process7 from '../assets/process/7_process.webp';
 import heroBg from '/src/assets/images/process/hero_result.webp';
-
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 export const ProcessPage = () => {
+  useScrollAnimation();
   const heroStyle = {
     backgroundImage: `url('${heroBg}')`,
     backgroundSize: 'cover',

@@ -6,8 +6,10 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 import { TestimonialCard } from '../components/ui/TestimonialCard';
 import { testimonials } from '../data/testimonials';
 import heroBg from '/src/assets/images/testimonial/hero_result.webp';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const TestimonialsPage = () => {
+  useScrollAnimation();
   const heroStyle = {
     backgroundImage: `url('${heroBg}')`,
     backgroundSize: 'cover',

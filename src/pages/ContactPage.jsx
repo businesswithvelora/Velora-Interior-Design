@@ -5,8 +5,10 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'
 import { SectionLabel } from '../components/ui/SectionLabel';
 import { Button } from '../components/ui/Button';
 import heroBg from '/src/assets/images/Contact/hero_result.webp';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const ContactPage = () => {
+  useScrollAnimation();
   const [submitted, setSubmitted] = useState(false);
   const { 
     register, 

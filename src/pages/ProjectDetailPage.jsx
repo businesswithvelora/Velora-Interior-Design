@@ -7,8 +7,10 @@ import { SectionLabel } from '../components/ui/SectionLabel';
 import { BeforeAfterSlider } from '../components/ui/BeforeAfterSlider';
 import { ImageLightbox } from '../components/ui/ImageLightbox';
 import { Button } from '../components/ui/Button';
+import { useScrollAnimation } from './hooks/useScrollAnimation';
 
 export const ProjectDetailPage = () => {
+  useScrollAnimation();
   const { slug } = useParams();
   const navigate = useNavigate();
   const [lightboxOpen, setLightboxOpen] = useState(false);
