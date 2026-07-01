@@ -8,8 +8,10 @@ import ProcessSection from '../components/sections/ProcessSection';
 import BeforeAfterSection from '../components/sections/BeforeAfterSection';
 import TestimonialsSection from '../components/sections/TestimonialsSection';
 import ContactCTABanner from '../components/sections/ContactCTABanner';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const HomePage = () => {
+  useScrollAnimation();
   return (
     <div className="homepage-container">
       <HeroSection />

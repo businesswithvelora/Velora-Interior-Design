@@ -10,7 +10,7 @@ export const Loader = () => {
     if (!isLoading) {
       const timer = setTimeout(() => {
         setVisible(false);
-      }, 600); // Match CSS fade-out transition duration
+      }, 400); // Match CSS fade-out transition duration
       return () => clearTimeout(timer);
     }
   }, [isLoading]);
@@ -28,7 +28,7 @@ export const Loader = () => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    transition: 'opacity 0.6s ease, visibility 0.6s ease',
+    transition: 'opacity 0.3s ease, visibility 0.3s ease',
     opacity: isLoading ? 1 : 0,
     visibility: isLoading ? 'visible' : 'hidden'
   };
