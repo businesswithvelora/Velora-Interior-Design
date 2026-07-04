@@ -18,7 +18,7 @@ export const Footer = () => {
               Where Vision Meets Elegance. Premium interior designs tailored for residences, corporate offices, and yachts.
             </p>
             <div className="footer-socials">
-              <a href="https://instagram.com" className="footer-social-icon clickable" aria-label="Instagram">
+              <a href="https://www.instagram.com/designvelorainterior?igsh=ZWdqZGJxY3d4YnRh&utm_source=qr" className="footer-social-icon clickable" aria-label="Instagram">
                 <FaInstagram />
               </a>
             </div>
