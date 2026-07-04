@@ -18,12 +18,29 @@ export const ContactPage = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    // Standard mock submission logging
     console.log("Contact form submitted data:", data);
     setSubmitted(true);
+
+    // 1. Target WhatsApp number (बिना spaces या '+' के)
+    const whatsappNumber = "917351901329";
+
+    // 2. Message ko line-by-line format kiya bold tags (* *) ke sath
+    const textMessage = `*New Design Request - Velora* 🔥%0A%0A` +
+      `👤 *Full Name:* ${encodeURIComponent(data.fullName)}%0A` +
+      `📞 *Phone Number:* ${encodeURIComponent(data.phone)}%0A` +
+      `✉️ *Email Address:* ${encodeURIComponent(data.email)}%0A` +
+      `🛠️ *Desired Service:* ${encodeURIComponent(data.service)}%0A` +
+      `📐 *Project Scope:* ${encodeURIComponent(data.projectType)}%0A%0A` +
+      `📝 *Project Description:*%0A${encodeURIComponent(data.message)}`;
+
+    // 3. Complete WhatsApp dynamic Link
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${textMessage}`;
+
+    // 4. User ko new tab me WhatsApp par redirect kiya
+    window.open(whatsappUrl, '_blank');
+
+    // Reset form states
     reset();
-    
-    // Auto clear success alert after 8s
     setTimeout(() => setSubmitted(false), 8000);
   };
 
@@ -57,7 +74,7 @@ export const ContactPage = () => {
             {submitted && (
               <div className="form-success-alert">
                 <h4>Thank You For Reaching Out</h4>
-                <p>Your design request has been received. A senior interior architect from the Velora team will contact you within 24 hours to coordinate our consultation session.</p>
+                <p>Your design request has been received. Redirecting to WhatsApp to finalize your consultation session...</p>
               </div>
             )}
 
