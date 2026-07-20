@@ -1,7 +1,13 @@
 /* FILE: src/components/common/Footer.jsx */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaPinterest, FaLinkedin, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
+import {
+  FaInstagram,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+} from 'react-icons/fa';
 import { services } from '../../data/services';
 
 export const Footer = () => {
@@ -15,10 +21,18 @@ export const Footer = () => {
           <div className="footer-col">
             <h3 className="footer-logo">Velora</h3>
             <p className="footer-tagline">
-              Where Vision Meets Elegance. Premium interior designs tailored for residences, corporate offices, and yachts.
+              Where Vision Meets Elegance. Premium interior designs tailored
+              for residences, corporate offices, and yachts.
             </p>
+
             <div className="footer-socials">
-              <a href="https://www.instagram.com/designvelorainterior?igsh=ZWdqZGJxY3d4YnRh&utm_source=qr" className="footer-social-icon clickable" aria-label="Instagram">
+              <a
+                href="https://www.instagram.com/designvelorainterior?igsh=ZWdqZGJxY3d4YnRh&utm_source=qr"
+                className="footer-social-icon clickable"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
                 <FaInstagram />
               </a>
             </div>
@@ -69,32 +83,43 @@ export const Footer = () => {
           {/* Column 4: Contact Information */}
           <div className="footer-col">
             <h4 className="footer-heading">Contact Details</h4>
+
             <div className="footer-info">
               <div className="footer-info-item">
                 <FaMapMarkerAlt />
-                <a 
-                  href="https://maps.app.goo.gl/XVvWT8gxfDz6zxEp9" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://maps.app.goo.gl/XVvWT8gxfDz6zxEp9"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="clickable"
                 >
                   Sector 115, Sorkha, Noida, Uttar Pradesh
                 </a>
               </div>
+
               <div className="footer-info-item">
                 <FaPhone />
-                <a href="tel:+91 73519 01329" className="clickable">+91 73519 01329</a>
+                <a href="tel:+917351901329" className="clickable">
+                  +91 73519 01329
+                </a>
               </div>
+
               <div className="footer-info-item">
                 <FaEnvelope />
-                <a href="mailto:businesswithvelora@gmail.com" className="clickable">businesswithvelora@gmail.com</a>
+                <a
+                  href="mailto:businesswithvelora@gmail.com"
+                  className="clickable"
+                >
+                  businesswithvelora@gmail.com
+                </a>
               </div>
+
               <div className="footer-info-item">
                 <FaWhatsapp />
-                <a 
-                  href="https://wa.me/917351901329" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://wa.me/917351901329"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="clickable"
                 >
                   Chat with an Expert
@@ -107,7 +132,16 @@ export const Footer = () => {
         {/* Bottom copyright */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            &copy; {currentYear} Velora Interior Design. All rights reserved. Made for luxury spaces.
+            &copy; {currentYear} Velora Interior Design. All rights reserved.
+            Made for luxury spaces. |{' '}
+            <a
+              href="https://westmere.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="clickable"
+            >
+              Design by Westmere
+            </a>
           </p>
         </div>
       </div>
